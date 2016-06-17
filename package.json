@@ -1,6 +1,6 @@
 {
   "name": "angular2-chartist",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Chartist component for Angular 2",
   "main": "./dist/angular2-chartist.js",
   "typings": "./dist/angular2-chartist.d.ts",
@@ -9,6 +9,7 @@
     "start": "webpack-dev-server",
     "build:demo": "webpack -p",
     "build:dist": "webpack --config webpack.config.dist.js",
+    "postbuild:dist": "uglifyjs dist/angular2-chartist.js --compress --mangle --screw-ie8 -o dist/angular2-chartist.min.js",
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -74,6 +75,7 @@
     "typedoc": "^0.4.2",
     "typescript": "^1.8.10",
     "typings": "^1.2.0",
+    "uglify-js": "^2.6.2",
     "validate-commit": "^2.2.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
