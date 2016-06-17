@@ -69,7 +69,8 @@
 				<p><a href="https://travis-ci.org/paradox41/angular2-chartist"><img src="https://travis-ci.org/paradox41/angular2-chartist.svg?branch=master" alt="Build Status"></a>
 					<a href="http://badge.fury.io/js/angular2-chartist"><img src="https://badge.fury.io/js/angular2-chartist.svg" alt="npm version"></a>
 					<a href="https://david-dm.org/paradox41/angular2-chartist#info=devDependencies"><img src="https://david-dm.org/paradox41/angular2-chartist/dev-status.svg" alt="devDependency Status"></a>
-				<a href="https://github.com/paradox41/angular2-chartist/issues"><img src="https://img.shields.io/github/issues/paradox41/angular2-chartist.svg" alt="GitHub issues"></a></p>
+					<a href="https://github.com/paradox41/angular2-chartist/issues"><img src="https://img.shields.io/github/issues/paradox41/angular2-chartist.svg" alt="GitHub issues"></a>
+				<a href="https://coveralls.io/github/paradox41/angular2-chartist?branch=master"><img src="https://coveralls.io/repos/github/paradox41/angular2-chartist/badge.svg?branch=master" alt="Coverage Status"></a></p>
 				<h2 id="demo">Demo</h2>
 				<p><a href="https://paradox41.github.io/angular2-chartist/demo/">https://paradox41.github.io/angular2-chartist/demo/</a></p>
 				<h2 id="table-of-contents">Table of contents</h2>
@@ -84,31 +85,31 @@
 				<p>Chartist component for Angular 2</p>
 				<h2 id="installation">Installation</h2>
 				<p>Install through npm:</p>
-				<pre><code>npm install --save @angular/core@<span class="hljs-number">2.0</span><span class="hljs-number">.0</span>-rc<span class="hljs-number">.1</span> angular2-chartist chartist
+				<pre><code>npm install --save <span class="hljs-variable">@angular</span>/core<span class="hljs-variable">@2</span>.<span class="hljs-number">0.0</span>-rc.<span class="hljs-number">2</span> angular2-chartist chartist
 </code></pre><p>Then use it in your app like so:</p>
-				<pre><code class="lang-typescript">import { Component } from '@angular/core';
-import { ChartistComponent } from 'angular2-chartist';
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { ChartistComponent } from <span class="hljs-string">'angular2-chartist'</span>;
 
 @Component({
-  selector: 'demo-app',
+  selector: <span class="hljs-string">'demo-app'</span>,
   directives: [ChartistComponent],
-  template: `
-    &lt;chartist
-      [(data)]="data"
-      [(type)]="type"
-      [(options)]="options"
-      [(responsiveOptions)]="responsiveOptions"&gt;
-    &lt;/chartist&gt;
-  `
+  template: <span class="hljs-string">`
+    &lt;x-chartist
+      [data]="data"
+      [type]="type"
+      [options]="options"
+      [responsiveOptions]="responsiveOptions"&gt;
+    &lt;/x-chartist&gt;
+  `</span>
 })
-export class DemoApp {}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DemoApp {}
 </code></pre>
 				<p>You may also find it useful to view the <a href="https://github.com/paradox41/angular2-chartist/blob/master/demo/demo.ts">demo source</a>.</p>
 				<h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-				<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"node_modules/angular2-chartist/dist/angular2-chartist.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/angular2-chartist/dist/angular2-chartist.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
     <span class="hljs-comment">// everything is exported angular2Chartist namespace</span>
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre><h2 id="documentation">Documentation</h2>
 				<p>All documentation is auto-generated from the source via typedoc and can be viewed here:
 				<a href="https://paradox41.github.io/angular2-chartist/docs/">https://paradox41.github.io/angular2-chartist/docs/</a></p>
@@ -119,7 +120,7 @@ export class DemoApp {}
 					<li>Install local dev dependencies: <code>npm install</code> while current directory is this repo</li>
 				</ul>
 				<h3 id="development-server">Development server</h3>
-				<p>Run <code>npm start</code> to start a development server on port 8080 with auto reload + tests. </p>
+				<p>Run <code>npm start</code> to start a development server on port 8080 with auto reload + tests.</p>
 				<h3 id="testing">Testing</h3>
 				<p>Run <code>npm test</code> to run tests once or <code>npm run test:watch</code> to continually run tests.</p>
 				<h3 id="release">Release</h3>
