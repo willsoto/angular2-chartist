@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/angular2-chartist.svg)](http://badge.fury.io/js/angular2-chartist)
 [![devDependency Status](https://david-dm.org/paradox41/angular2-chartist/dev-status.svg)](https://david-dm.org/paradox41/angular2-chartist#info=devDependencies)
 [![GitHub issues](https://img.shields.io/github/issues/paradox41/angular2-chartist.svg)](https://github.com/paradox41/angular2-chartist/issues)
+[![Coverage Status](https://coveralls.io/repos/github/paradox41/angular2-chartist/badge.svg?branch=master)](https://coveralls.io/github/paradox41/angular2-chartist?branch=master)
 
 ## Demo
 https://paradox41.github.io/angular2-chartist/demo/
@@ -23,7 +24,7 @@ Chartist component for Angular 2
 
 Install through npm:
 ```
-npm install --save @angular/core@2.0.0-rc.1 angular2-chartist chartist
+npm install --save @angular/core@2.0.0-rc.2 angular2-chartist chartist
 ```
 
 Then use it in your app like so:
@@ -36,12 +37,12 @@ import { ChartistComponent } from 'angular2-chartist';
   selector: 'demo-app',
   directives: [ChartistComponent],
   template: `
-    <chartist
-      [(data)]="data"
-      [(type)]="type"
-      [(options)]="options"
-      [(responsiveOptions)]="responsiveOptions">
-    </chartist>
+    <x-chartist
+      [data]="data"
+      [type]="type"
+      [options]="options"
+      [responsiveOptions]="responsiveOptions">
+    </x-chartist>
   `
 })
 export class DemoApp {}
@@ -68,7 +69,7 @@ https://paradox41.github.io/angular2-chartist/docs/
 * Install local dev dependencies: `npm install` while current directory is this repo
 
 ### Development server
-Run `npm start` to start a development server on port 8080 with auto reload + tests. 
+Run `npm start` to start a development server on port 8080 with auto reload + tests.
 
 ### Testing
 Run `npm test` to run tests once or `npm run test:watch` to continually run tests.

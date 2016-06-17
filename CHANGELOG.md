@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/paradox41/angular2-chartist/compare/v0.3.0...v0.3.1) (2016-06-17)
+
+
+### Bug Fixes
+
+* **build:** don't include Chartist in the bundle ([e4c0fb0](https://github.com/paradox41/angular2-chartist/commit/e4c0fb0))
+* **chartist.component:** fix typo. Actual error exists in typings ([46b55b2](https://github.com/paradox41/angular2-chartist/commit/46b55b2)), closes [#6](https://github.com/paradox41/angular2-chartist/issues/6)
+
+
+
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/paradox41/angular2-chartist/compare/v0.2.1...v0.3.0) (2016-06-16)
+
+
+### Code Refactoring
+
+* **chartist.component:** rename selector to be spec compliant ([02b228e](https://github.com/paradox41/angular2-chartist/commit/02b228e))
+
+
+### BREAKING CHANGES
+
+* chartist.component: chartist is now x-chartist
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/paradox41/angular2-chartist/compare/v0.2.0...v0.2.1) (2016-06-15)
+
+
+### Bug Fixes
+
+* **build:** angular/core really wants beta.6 ([e85d68f](https://github.com/paradox41/angular2-chartist/commit/e85d68f))
+
+
+
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/paradox41/angular2-chartist/compare/v0.1.3...v0.2.0) (2016-06-15)
+
+
+### Features
+
+* **angular:** bump angular to rc.2 ([a3e0923](https://github.com/paradox41/angular2-chartist/commit/a3e0923))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/paradox41/angular2-chartist/compare/v0.1.1...v0.1.3) (2016-06-06)
 
