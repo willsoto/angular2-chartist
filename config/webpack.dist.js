@@ -1,8 +1,8 @@
-const path = require('path');
+const helpers = require('./helpers');
 
 module.exports = {
   devtool: 'source-map',
-  context: path.resolve(__dirname, 'src'),
+  context: helpers.root('src'),
   entry: {
     'angular2-chartist': './chartist.component.ts'
   },
@@ -10,7 +10,7 @@ module.exports = {
     filename: '[name].js',
     libraryTarget: 'umd',
     library: 'angular2Chartist',
-    path: path.resolve(__dirname, 'dist')
+    path: helpers.root('dist')
   },
   externals: {
     '@angular/core': {

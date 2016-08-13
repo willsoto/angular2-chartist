@@ -1,6 +1,6 @@
 {
   "name": "angular2-chartist",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Chartist component for Angular 2",
   "main": "./dist/angular2-chartist.js",
   "typings": "./dist/chartist.component.d.ts",
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build:demo": "webpack -p",
-    "build:dist": "webpack --config webpack.config.dist.js",
+    "build:dist": "webpack --config ./config/webpack.dist.js",
     "postbuild:dist": "uglifyjs dist/angular2-chartist.js --compress --mangle --screw-ie8 -o dist/angular2-chartist.min.js",
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
@@ -45,17 +45,16 @@
     "url": "https://github.com/paradox41/angular2-chartist/issues"
   },
   "homepage": "https://github.com/paradox41/angular2-chartist#readme",
-  "dependencies": {
-    "@types/chartist": "^0.9.29",
-    "@types/es6-shim": "0.0.28",
-    "@types/jasmine": "^2.2.30"
-  },
   "devDependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "^0.3.0",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@types/chartist": "^0.9.30",
+    "@types/jasmine": "^2.2.31",
+    "@types/rx": "^2.5.29",
     "chartist": "^0.9.7",
     "codelyzer": "0.0.26",
     "coveralls": "^2.11.9",
@@ -72,8 +71,8 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
-    "phantomjs-prebuilt": "^2.1.9",
-    "reflect-metadata": "0.1.3",
+    "phantomjs-prebuilt": "^2.1.11",
+    "reflect-metadata": "0.1.8",
     "rimraf": "^2.5.2",
     "rxjs": "5.0.0-beta.6",
     "standard-version": "^2.3.0",
@@ -89,7 +88,7 @@
     "zone.js": "^0.6.12"
   },
   "peerDependencies": {
-    "@angular/core": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.5",
     "chartist": "^0.9.7"
   }
 }
