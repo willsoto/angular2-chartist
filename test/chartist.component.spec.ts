@@ -10,6 +10,8 @@ import {
   ChartistComponent
 } from '../src/chartist.component';
 
+declare var require: any;
+
 const data: any = require('./data.json');
 
 describe('chartist component', function(): void {
@@ -146,5 +148,23 @@ describe('chartist component', function(): void {
       expect(instance.renderChart).not.toHaveBeenCalled();
       expect(instance.chart.update).toHaveBeenCalled();
     });
+  }));
+
+  it('should throw an error when missing type', async(() => {
+    let fixture = TestBed.createComponent(ChartistComponent);
+    let instance: ChartistComponent = fixture.debugElement.componentInstance;
+
+    instance.data = data['Bar'];
+
+    expect(instance.ngOnInit).toThrow();
+  }));
+
+  it('should throw an error when missing data', async(() => {
+    let fixture = TestBed.createComponent(ChartistComponent);
+    let instance: ChartistComponent = fixture.debugElement.componentInstance;
+
+    instance.type = 'Bar';
+
+    expect(instance.ngOnInit).toThrow();
   }));
 });

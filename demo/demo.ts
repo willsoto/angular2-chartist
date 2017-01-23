@@ -9,6 +9,8 @@ import {
   ChartEvent
 } from '../src/chartist.component';
 
+declare var require: any;
+
 const data: any = require('./data.json');
 
 export interface Chart {
@@ -97,12 +99,12 @@ export class DemoAppComponent {
       options: {
         donut: true,
         showLabel: false
-      },
-      events: {
-        draw(data: any): void {
-          console.log(data);
-        }
       }
+      // events: {
+      //   draw(data: any): boolean {
+      //     return data;
+      //   }
+      // }
     }];
   }
 }

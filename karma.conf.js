@@ -1,4 +1,4 @@
-'use strict';
+const webpack = require('webpack');
 
 const helpers = require('./config/helpers');
 
@@ -16,45 +16,48 @@ module.exports = function(config) {
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['', '.ts', '.js']
+        extensions: ['.ts', '.js']
       },
       module: {
-        preLoaders: [{
+        loaders: [{
+          enforce: 'pre',
           test: /\.ts$/,
-          loader: 'tslint',
+          loader: 'tslint-loader',
           include: [
             helpers.root('src'),
             helpers.root('test')
           ]
-        }],
-        loaders: [{
+        }, {
           test: /\.ts$/,
-          loader: 'ts',
+          loader: 'ts-loader',
           include: [
             helpers.root('src'),
             helpers.root('test')
           ]
         }, {
           test: /\.json$/,
-          loader: 'json',
+          loader: 'json-loader',
           include: [
             helpers.root('src'),
             helpers.root('test')
           ]
-        }],
-        postLoaders: [{
+        }, {
+          enforce: 'post',
           test: /\.ts$/,
-          loader: 'istanbul-instrumenter',
+          loader: 'istanbul-instrumenter-loader',
           include: [
             helpers.root('src')
           ]
         }]
       },
-      tslint: {
-        emitErrors: false,
-        failOnHint: false
-      },
-      plugins: []
+      plugins: [
+        new webpack.LoaderOptionsPlugin({
+          tslint: {
+            emitErrors: false,
+            failOnHint: false
+          }
+        })
+      ]
     },
     webpackMiddleware: {
       noInfo: true,

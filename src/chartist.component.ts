@@ -1,4 +1,5 @@
 import {
+  NgModule,
   Component,
   ElementRef,
   Input,
@@ -49,6 +50,10 @@ class ChartistComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit(): Promise<ChartInterfaces> {
+    if (!this.type || !this.data) {
+      Promise.reject(`Expected at least type and data.`);
+    }
+
     return this.renderChart().then((chart) => {
       if (this.events !== undefined) {
         this.bindEvents(chart);
@@ -90,22 +95,15 @@ class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     if (!this.chart || 'type' in changes) {
       this.renderChart();
     } else {
-      let data: any;
-      let options: Chartist.IChartOptions;
-
-      if (changes['data'] === undefined) {
-        data = this.data;
-      } else {
-        data = changes['data'].currentValue;
+      if (changes['data']) {
+        this.data = changes['data'].currentValue;
       }
 
-      if (changes['options'] === undefined) {
-        options = this.options;
-      } else {
-        options = changes['options'].currentValue;
+      if (changes['options']) {
+        this.options = changes['options'].currentValue;
       }
 
-      (<any>this.chart).update(data, options);
+      (<any>this.chart).update(this.data, this.options);
     }
   }
 
@@ -116,8 +114,19 @@ class ChartistComponent implements OnInit, OnChanges, OnDestroy {
   }
 }
 
+@NgModule({
+  declarations: [
+    ChartistComponent
+  ],
+  exports: [
+    ChartistComponent
+  ]
+})
+class ChartistModule {}
+
 export {
-  ChartistComponent
+  ChartistComponent,
+  ChartistModule
 };
 
 // for angular-cli

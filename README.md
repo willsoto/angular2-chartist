@@ -24,7 +24,7 @@ Chartist component for Angular 2
 
 ### Install through npm:
 ```
-npm install --save @angular/core@2.0.0-rc.4 angular2-chartist chartist
+npm install @angular/core angular2-chartist chartist --save
 ```
 ### Additionally typings for the chartist library need to be installed:
 
@@ -46,22 +46,26 @@ npm install @types/chartist --save-dev
 ### Then use it in your app like so:
 
 ```typescript
-import { Component } from '@angular/core';
-import { ChartistComponent } from 'angular2-chartist';
+import {
+  NgModule
+} from '@angular/core';
 
-@Component({
-  selector: 'demo-app',
-  directives: [ChartistComponent],
-  template: `
-    <x-chartist
-      [data]="data"
-      [type]="type"
-      [options]="options"
-      [responsiveOptions]="responsiveOptions">
-    </x-chartist>
-  `
+import {
+  ChartistModule
+} from 'angular2-chartist';
+
+import {
+  MyAppComponent
+} from './my-app';
+
+@NgModule({
+  imports: [
+    ChartistModule,
+  ],
+  bootstrap: [MyAppComponent]
 })
-export class DemoApp {}
+export class AppModule { }
+
 ```
 
 You may also find it useful to view the [demo source](https://github.com/paradox41/angular2-chartist/blob/master/demo/demo.ts).
