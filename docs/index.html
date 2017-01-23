@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -84,25 +83,38 @@
 				<h2 id="about">About</h2>
 				<p>Chartist component for Angular 2</p>
 				<h2 id="installation">Installation</h2>
-				<p>Install through npm:</p>
-				<pre><code>npm install --save <span class="hljs-variable">@angular</span>/core<span class="hljs-variable">@2</span>.<span class="hljs-number">0.0</span>-rc.<span class="hljs-number">4</span> angular2-chartist chartist
-</code></pre><p>Then use it in your app like so:</p>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
-<span class="hljs-keyword">import</span> { ChartistComponent } from <span class="hljs-string">'angular2-chartist'</span>;
+				<h3 id="install-through-npm-">Install through npm:</h3>
+				<pre><code><span class="hljs-built_in">npm</span> install @angular/core angular2-chartist chartist --save
+</code></pre><h3 id="additionally-typings-for-the-chartist-library-need-to-be-installed-">Additionally typings for the chartist library need to be installed:</h3>
+				<ul>
+					<li>For TSC &lt;= 1.8:</li>
+				</ul>
+				<pre><code>npm <span class="hljs-keyword">install</span> -g typings <span class="hljs-comment">--save</span>
+</code></pre><pre><code>typings <span class="hljs-keyword">install</span> -g dt~chartist <span class="hljs-comment">--save</span>
+</code></pre><ul>
+					<li>For TSC = 2.0+ typings can be installed through npm directly:</li>
+				</ul>
+				<pre><code><span class="hljs-built_in">npm</span> install @types/chartist --save-dev
+</code></pre><h3 id="then-use-it-in-your-app-like-so-">Then use it in your app like so:</h3>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {
+  NgModule
+} from <span class="hljs-string">'@angular/core'</span>;
 
-@Component({
-  selector: <span class="hljs-string">'demo-app'</span>,
-  directives: [ChartistComponent],
-  template: <span class="hljs-string">`
-    &lt;x-chartist
-      [data]="data"
-      [type]="type"
-      [options]="options"
-      [responsiveOptions]="responsiveOptions"&gt;
-    &lt;/x-chartist&gt;
-  `</span>
+<span class="hljs-keyword">import</span> {
+  ChartistModule
+} from <span class="hljs-string">'angular2-chartist'</span>;
+
+<span class="hljs-keyword">import</span> {
+  MyAppComponent
+} from <span class="hljs-string">'./my-app'</span>;
+
+<span class="hljs-meta">@NgModule</span>({
+  imports: [
+    ChartistModule,
+  ],
+  bootstrap: [MyAppComponent]
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DemoApp {}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
 </code></pre>
 				<p>You may also find it useful to view the <a href="https://github.com/paradox41/angular2-chartist/blob/master/demo/demo.ts">demo source</a>.</p>
 				<h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
@@ -145,6 +157,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="classes/chartistcomponent.html" class="tsd-kind-icon">Chartist<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="classes/chartistmodule.html" class="tsd-kind-icon">Chartist<wbr>Module</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/chartevent.html" class="tsd-kind-icon">Chart<wbr>Event</a>
@@ -229,7 +244,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
