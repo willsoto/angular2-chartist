@@ -16,7 +16,7 @@ export declare type ResponsiveOptions = Array<ResponsiveOptionTuple>;
 export interface ChartEvent {
     [eventName: string]: (data: any) => void;
 }
-declare class ChartistComponent implements OnInit, OnChanges, OnDestroy {
+export declare class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     data: (Promise<Chartist.IChartistData> | Chartist.IChartistData);
     type: (Promise<ChartType> | ChartType);
     options: (Promise<Chartist.IChartOptions> | Chartist.IChartOptions);
@@ -32,9 +32,8 @@ declare class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     update(changes: SimpleChanges): void;
     bindEvents(chart: any): void;
 }
-declare class ChartistModule {
+export declare class ChartistModule {
 }
-export { ChartistComponent, ChartistModule };
 declare var _default: {
     directives: typeof ChartistComponent[];
 };
