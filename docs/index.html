@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>angular2-chartist</title>
+	<title>ng-chartist</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">angular2-chartist</a>
+					<a href="index.html" class="title">ng-chartist</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> angular2-chartist</h1>
+			<h1> ng-chartist</h1>
 		</div>
 	</div>
 </header>
@@ -64,14 +64,15 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="angular2-chartist">Angular2 Chartist</h1>
-				<p><a href="https://travis-ci.org/willsoto/angular2-chartist"><img src="https://travis-ci.org/willsoto/angular2-chartist.svg?branch=master" alt="Build Status"></a>
-					<a href="http://badge.fury.io/js/angular2-chartist"><img src="https://badge.fury.io/js/angular2-chartist.svg" alt="npm version"></a>
-					<a href="https://david-dm.org/willsoto/angular2-chartist#info=devDependencies"><img src="https://david-dm.org/willsoto/angular2-chartist/dev-status.svg" alt="devDependency Status"></a>
-					<a href="https://github.com/willsoto/angular2-chartist/issues"><img src="https://img.shields.io/github/issues/willsoto/angular2-chartist.svg" alt="GitHub issues"></a>
-				<a href="https://coveralls.io/github/willsoto/angular2-chartist?branch=master"><img src="https://coveralls.io/repos/github/willsoto/angular2-chartist/badge.svg?branch=master" alt="Coverage Status"></a></p>
+				<h1 id="angular-chartist">Angular Chartist</h1>
+				<p><a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/willsoto/ng-chartist.svg" alt="Greenkeeper badge"></a>
+					<a href="https://travis-ci.org/willsoto/ng-chartist"><img src="https://travis-ci.org/willsoto/ng-chartist.svg?branch=master" alt="Build Status"></a>
+					<a href="http://badge.fury.io/js/ng-chartist"><img src="https://badge.fury.io/js/ng-chartist.svg" alt="npm version"></a>
+					<a href="https://david-dm.org/willsoto/ng-chartist#info=devDependencies"><img src="https://david-dm.org/willsoto/ng-chartist/dev-status.svg" alt="devDependency Status"></a>
+					<a href="https://github.com/willsoto/ng-chartist/issues"><img src="https://img.shields.io/github/issues/willsoto/ng-chartist.svg" alt="GitHub issues"></a>
+				<a href="https://coveralls.io/github/willsoto/ng-chartist?branch=master"><img src="https://coveralls.io/repos/github/willsoto/ng-chartist/badge.svg?branch=master" alt="Coverage Status"></a></p>
 				<h2 id="demo">Demo</h2>
-				<p><a href="https://willsoto.github.io/angular2-chartist/demo/">https://willsoto.github.io/angular2-chartist/demo/</a></p>
+				<p><a href="https://willsoto.github.io/ng-chartist/demo/">https://willsoto.github.io/ng-chartist/demo/</a></p>
 				<h2 id="table-of-contents">Table of contents</h2>
 				<ul>
 					<li><a href="#about">About</a></li>
@@ -84,7 +85,7 @@
 				<p>Chartist component for Angular 2</p>
 				<h2 id="installation">Installation</h2>
 				<h3 id="install-through-npm-">Install through npm:</h3>
-				<pre><code><span class="hljs-built_in">npm</span> install @angular/core angular2-chartist chartist --save
+				<pre><code><span class="hljs-built_in">npm</span> install @angular/core ng-chartist chartist --save
 </code></pre><h3 id="additionally-typings-for-the-chartist-library-need-to-be-installed-">Additionally typings for the chartist library need to be installed:</h3>
 				<ul>
 					<li>For TSC &lt;= 1.8:</li>
@@ -102,7 +103,7 @@
 
 <span class="hljs-keyword">import</span> {
   ChartistModule
-} from <span class="hljs-string">'angular2-chartist'</span>;
+} from <span class="hljs-string">'ng-chartist'</span>;
 
 <span class="hljs-keyword">import</span> {
   MyAppComponent
@@ -116,15 +117,14 @@
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
 </code></pre>
-				<p>You may also find it useful to view the <a href="https://github.com/paradox41/angular2-chartist/blob/master/demo/demo.ts">demo source</a>.</p>
+				<p>You may also find it useful to view the <a href="https://github.com/paradox41/ng-chartist/blob/master/demo/demo.ts">demo source</a>.</p>
 				<h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/angular2-chartist/dist/angular2-chartist.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/ng-chartist/dist/ng-chartist.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-    <span class="hljs-comment">// everything is exported angular2Chartist namespace</span>
+    <span class="hljs-comment">// everything is exported ngChartist namespace</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre><h2 id="documentation">Documentation</h2>
-				<p>All documentation is auto-generated from the source via typedoc and can be viewed here:
-				<a href="https://paradox41.github.io/angular2-chartist/docs/">https://paradox41.github.io/angular2-chartist/docs/</a></p>
+				<p>All documentation is auto-generated from the source via typedoc and can be viewed <a href="https://willsoto.github.io/ng-chartist/docs/">here</a></p>
 				<h2 id="development">Development</h2>
 				<h3 id="prepare-your-environment">Prepare your environment</h3>
 				<ul>
