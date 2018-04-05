@@ -1,13 +1,8 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import * as Chartist from 'chartist';
 
-import {
-  ChartType,
-  ChartEvent
-} from '../src/chartist.component';
+import { ChartEvent, ChartType } from '../src/chartist.component';
 
 declare var require: any;
 
@@ -26,85 +21,96 @@ export interface Chart {
   templateUrl: './demo.template.html'
 })
 export class DemoAppComponent {
-  charts: Chart[];
+  public charts: Chart[];
 
   constructor() {
-    this.charts = [{
-      type: 'Bar',
-      data: data['Bar']
-    }, {
-      type: 'Line',
-      data: data['Line']
-    }, {
-      type: 'Line',
-      data: data['Line2']
-    }, {
-      type: 'Line',
-      data: data['Scatter'],
-      options: {
-        showLine: false,
-        axisX: {
-          labelInterpolationFnc: function(value: number, index: number): string {
-            return index % 13 === 0 ? `W${value}` : null;
-          }
-        }
+    this.charts = [
+      {
+        data: data.Bar,
+        type: 'Bar'
       },
-      responsiveOptions: [
-        ['screen and (min-width: 640px)', {
+      {
+        data: data.Line,
+        type: 'Line'
+      },
+      {
+        data: data.Line2,
+        type: 'Line'
+      },
+      {
+        data: data.Scatter,
+        options: {
           axisX: {
-            labelInterpolationFnc: function(value: number, index: number): string {
-              return index % 4 === 0 ? `W${value}` : null;
+            labelInterpolationFnc(value: number, index: number): string | null {
+              return index % 13 === 0 ? `W${value}` : null;
             }
-          }
-        }]
-      ]
-    }, {
-      type: 'Line',
-      data: data['LineWithArea'],
-      options: {
-        low: 0,
-        showArea: true
+          },
+          showLine: false
+        },
+        responsiveOptions: [
+          [
+            'screen and (min-width: 640px)',
+            {
+              axisX: {
+                labelInterpolationFnc(
+                  value: number,
+                  index: number
+                ): string | null {
+                  return index % 4 === 0 ? `W${value}` : null;
+                }
+              }
+            }
+          ]
+        ],
+        type: 'Line'
+      },
+      {
+        data: data.LineWithArea,
+        options: {
+          low: 0,
+          showArea: true
+        },
+        type: 'Line'
+      },
+      {
+        data: data['Bi-PolarBar'],
+        options: {
+          axisX: {
+            labelInterpolationFnc(value: number, index: number): number | null {
+              return index % 2 === 0 ? value : null;
+            }
+          },
+          high: 10,
+          low: -10
+        },
+        type: 'Bar'
+      },
+      {
+        data: data.DistributedSeries,
+        options: {
+          distributeSeries: true
+        },
+        type: 'Bar'
+      },
+      {
+        data: data.Pie,
+        options: {
+          donut: true,
+          donutWidth: 60,
+          showLabel: false,
+          startAngle: 270,
+          total: 200
+        },
+        type: 'Pie'
+      },
+      {
+        data: data.Pie,
+        options: {
+          donut: true,
+          showLabel: false
+        },
+        type: 'Pie'
       }
-    }, {
-      type: 'Bar',
-      data: data['Bi-PolarBar'],
-      options: {
-        high: 10,
-        low: -10,
-        axisX: {
-          labelInterpolationFnc: function(value: number, index: number): number {
-            return index % 2 === 0 ? value : null;
-          }
-        }
-      }
-    }, {
-      type: 'Bar',
-      data: data['DistributedSeries'],
-      options: {
-        distributeSeries: true
-      }
-    }, {
-      type: 'Pie',
-      data: data['Pie'],
-      options: {
-        donut: true,
-        donutWidth: 60,
-        startAngle: 270,
-        total: 200,
-        showLabel: false
-      }
-    }, {
-      type: 'Pie',
-      data: data['Pie'],
-      options: {
-        donut: true,
-        showLabel: false
-      }
-      // events: {
-      //   draw(data: any): boolean {
-      //     return data;
-      //   }
-      // }
-    }];
+    ];
   }
 }

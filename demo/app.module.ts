@@ -1,16 +1,8 @@
-import {
-  NgModule
-} from '@angular/core';
-import {
-  BrowserModule
-} from '@angular/platform-browser';
-import {
-  FormsModule
-} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
-import {
-  ChartistModule
-} from '../src/chartist.component';
+import { ChartistModule } from '../src/chartist.module';
 
 import {
   AsyncChartComponent,
@@ -18,22 +10,16 @@ import {
   LiveChartComponent
 } from './components';
 
-import {
-  DemoAppComponent
-} from './demo';
+import { DemoAppComponent } from './demo';
 
 @NgModule({
+  bootstrap: [DemoAppComponent],
   declarations: [
     DemoAppComponent,
     LiveChartComponent,
     AsyncChartComponent,
     DynamicChartComponent
   ],
-  imports: [
-    ChartistModule,
-    BrowserModule,
-    FormsModule
-  ],
-  bootstrap: [DemoAppComponent]
+  imports: [ChartistModule, BrowserModule, FormsModule]
 })
-export class AppModule { }
+export class AppModule {}

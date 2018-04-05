@@ -1,10 +1,6 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {
-  ChartType
-} from '../../src/chartist.component';
+import { ChartType } from '../../src/chartist.component';
 
 import * as Chartist from 'chartist';
 
@@ -23,14 +19,14 @@ const data: any = require('../data.json');
   `
 })
 class AsyncChartComponent {
-  data: Promise<Chartist.IChartistData>;
-  type: Promise<ChartType>;
+  public data: Promise<Chartist.IChartistData>;
+  public type: Promise<ChartType>;
 
   constructor() {
     // simulate slow API call
     this.data = new Promise(function(resolve: any): void {
       setTimeout(function(): void {
-        resolve(data['Pie']);
+        resolve(data.Pie);
       }, 5000);
     });
 
@@ -42,6 +38,4 @@ class AsyncChartComponent {
   }
 }
 
-export {
-  AsyncChartComponent
-};
+export { AsyncChartComponent };
