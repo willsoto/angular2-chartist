@@ -1,24 +1,34 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es6"
-    ],
-    "outDir": "./dist",
-    "removeComments": false,
     "target": "es5",
-    "skipLibCheck": true,
-    "strict": true
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "ng-chartist": ["dist/ng-chartist-lib"],
+      "ng-chartist/*": ["dist/ng-chartist-lib/*"]
+    }
   },
-  "include": [
-    "src/*.ts"
-  ],
-  "angularCompilerOptions" : {
-    "skipTemplateCodegen": true
+  "typedocOptions": {
+    "mode": "file",
+    "out": "docs",
+    "ignoreCompilerErrors": "true",
+    "experimentalDecorators": "true",
+    "emitDecoratorMetadata": "true",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "preserveConstEnums": "true",
+    "stripInternal": "true",
+    "suppressExcessPropertyErrors": "true",
+    "suppressImplicitAnyIndexErrors": "true",
+    "module": "commonjs"
   }
 }
