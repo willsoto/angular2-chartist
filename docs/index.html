@@ -76,25 +76,21 @@
 					<li><a href="#installation">Installation</a></li>
 					<li><a href="#documentation">Documentation</a></li>
 					<li><a href="#development">Development</a></li>
-					<li><a href="#licence">License</a></li>
+					<li><a href="#license">License</a></li>
 				</ul>
 				<h2 id="about">About</h2>
 				<p>Chartist component for Angular 2</p>
 				<h2 id="installation">Installation</h2>
 				<h3 id="install-through-npm-">Install through npm:</h3>
-				<pre><code><span class="hljs-built_in">npm</span> install @angular/core ng-chartist chartist --save
-</code></pre><h3 id="additionally-typings-for-the-chartist-library-need-to-be-installed-">Additionally typings for the chartist library need to be installed:</h3>
+				<pre><code><span class="hljs-built_in">npm</span> install @angular/core ng-chartist chartist --save</code></pre><h3 id="additionally-typings-for-the-chartist-library-need-to-be-installed-">Additionally typings for the chartist library need to be installed:</h3>
 				<ul>
 					<li>For TSC &lt;= 1.8:</li>
 				</ul>
-				<pre><code>npm <span class="hljs-keyword">install</span> -g typings <span class="hljs-comment">--save</span>
-</code></pre><pre><code>typings <span class="hljs-keyword">install</span> -g dt~chartist <span class="hljs-comment">--save</span>
-</code></pre><ul>
+				<pre><code>npm <span class="hljs-keyword">install</span> -g typings <span class="hljs-comment">--save</span></code></pre><pre><code>typings <span class="hljs-keyword">install</span> -g dt~chartist <span class="hljs-comment">--save</span></code></pre><ul>
 					<li>For TSC = 2.0+ typings can be installed through npm directly:</li>
 				</ul>
-				<pre><code><span class="hljs-built_in">npm</span> install @types/chartist --save-dev
-</code></pre><h3 id="then-use-it-in-your-app-like-so-">Then use it in your app like so:</h3>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+				<pre><code><span class="hljs-built_in">npm</span> install @types/chartist --save-dev</code></pre><h3 id="then-use-it-in-your-app-like-so-">Then use it in your app like so:</h3>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 
 <span class="hljs-keyword">import</span> { ChartistModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'ng-chartist'</span>;
 
@@ -104,29 +100,24 @@
   imports: [ChartistModule],
   bootstrap: [MyAppComponent]
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {}
-</code></pre>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {}</code></pre>
 				<h3 id="add-chart-styles-to-your-app-">Add chart styles to your app:</h3>
 				<ul>
-					<li>using <code>.angular-cli.json</code>:</li>
+					<li>Add to styles section in <code>angular.json</code> file:</li>
 				</ul>
-				<pre><code class="lang-javascript"><span class="hljs-string">"styles"</span>: [
+				<pre><code class="language-javascript"><span class="hljs-string">"styles"</span>: [
   <span class="hljs-string">"scss/style.scss"</span>,
   <span class="hljs-string">"../node_modules/chartist/dist/chartist.css"</span>
-],
-</code></pre>
+],</code></pre>
 				<ul>
 					<li>or in the <code>index.html</code> file with:</li>
 				</ul>
-				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"</span>&gt;</span>
-</code></pre>
-				<p>You may also find it useful to view the <a href="https://github.com/willsoto/ng-chartist/blob/master/demo/demo.ts">demo source</a>.</p>
-				<h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node_modules/ng-chartist/dist/ng-chartist.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-    <span class="hljs-comment">// everything is exported ngChartist namespace</span>
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre><h2 id="documentation">Documentation</h2>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+  <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+  <span class="hljs-attr">href</span>=<span class="hljs-string">"//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"</span>
+/&gt;</span></code></pre>
+				<p>You may also find it useful to view the <a href="https://github.com/willsoto/ng-chartist/blob/master/projects/ng-chartist-demo/src/app/app.component.ts">demo source</a>.</p>
+				<h2 id="documentation">Documentation</h2>
 				<p>All documentation is auto-generated from the source via typedoc and can be viewed <a href="https://willsoto.github.io/ng-chartist/docs/">here</a></p>
 				<h2 id="development">Development</h2>
 				<h3 id="prepare-your-environment">Prepare your environment</h3>
@@ -142,8 +133,7 @@
 				<ul>
 					<li>Bump the version in package.json (once the module hits 1.0 this will become automatic)</li>
 				</ul>
-				<pre><code class="lang-bash">npm run release
-</code></pre>
+				<pre><code class="language-bash">npm run release</code></pre>
 				<h2 id="license">License</h2>
 				<p>Apache-2.0</p>
 			</div>
