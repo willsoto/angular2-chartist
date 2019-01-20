@@ -38,3 +38,6 @@
 Thumbs.db
 
 docs/
+
+projects/ng-chartist/package.json
+projects/ng-chartist/README.md
