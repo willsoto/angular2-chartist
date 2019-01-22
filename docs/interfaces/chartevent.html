@@ -68,8 +68,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Represent a chart event.
-For possible values, check the Chartist docs.</p>
+                <p>Represents chart events.</p>
 
             </p>
 
@@ -88,7 +87,7 @@ For possible values, check the Chartist docs.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:35</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -131,13 +130,28 @@ export type ResponsiveOptionTuple &#x3D; Chartist.IResponsiveOptionTuple&lt;
 export type ResponsiveOptions &#x3D; ResponsiveOptionTuple[];
 
 /**
- * Represent a chart event.
- * For possible values, check the Chartist docs.
+ * Represents chart events.
  */
 export interface ChartEvent {
   [eventName: string]: (data: any) &#x3D;&gt; void;
 }
 
+/**
+ * Angular component which renders Chartist chart.
+ *
+ * See Chartist {@link https://gionkunz.github.io/chartist-js/api-documentation.html API documentation} and
+ * {@link https://gionkunz.github.io/chartist-js/examples.html examples} for more information.
+ * ### Example
+ &#x60;&#x60;&#x60;html
+ &lt;x-chartist
+   [type]&#x3D;&quot;type&quot;
+   [data]&#x3D;&quot;data&quot;
+   [options]&#x3D;&quot;options&quot;
+   [responsiveOptions]&#x3D;&quot;responsiveOptions&quot;
+   [events]&#x3D;&quot;events&quot;
+ &gt;&lt;/x-chartist&gt;
+ &#x60;&#x60;&#x60;
+ */
 @Component({
   selector: &#x27;x-chartist&#x27;,
   template: &#x27;&#x27;,
@@ -150,35 +164,61 @@ export interface ChartEvent {
   ]
 })
 export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
+  /**
+   * The data object that needs to consist of a labels and a series array.
+   */
   @Input()
   data: Chartist.IChartistData;
 
+  /**
+   * Chartist chart type.
+   */
   @Input()
   type: ChartType;
 
+  /**
+   * The options object which overrides the default options.
+   */
   @Input()
   options: Chartist.IChartOptions;
 
+  /**
+   * An array of responsive option arrays which are a media query and options object pair: [[mediaQueryString, optionsObject],[more...]]
+   */
   @Input()
   responsiveOptions: ResponsiveOptions;
 
+  /**
+   * Events object where keys are event names and values are event handler functions.
+   *
+   * Supported events are: draw, optionsChanged, data, animationBegin, animationEnd, created.
+   *
+   * Event handler function will receive a data argument which contains event data.
+   */
   @Input()
   events: ChartEvent;
 
+  /**
+   * Chartist chart instance
+   */
   public chart: ChartInterfaces;
 
+  /** @ignore */
   constructor(private elementRef: ElementRef) {}
 
+  /** @ignore */
   ngOnInit(): void {
     if (this.type &amp;&amp; this.data) {
       this.renderChart();
     }
   }
 
+  /** @ignore */
   ngOnChanges(changes: SimpleChanges): void {
     this.update(changes);
   }
 
+  /** @ignore */
   ngOnDestroy(): void {
     if (this.chart) {
       this.chart.detach();
@@ -186,6 +226,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private renderChart() {
     const nativeElement &#x3D; this.elementRef.nativeElement;
 
@@ -205,6 +246,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private update(changes: SimpleChanges): void {
     if (!this.type || !this.data) {
       return;
@@ -220,6 +262,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private bindEvents(): void {
     for (const event of Object.keys(this.events)) {
       this.chart.on(event, this.events[event]);

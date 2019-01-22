@@ -61,6 +61,22 @@
     <code>projects/ng-chartist/src/lib/chartist.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Angular component which renders Chartist chart.</p>
+<p>See Chartist <a href="https://gionkunz.github.io/chartist-js/api-documentation.html">API documentation</a> and
+<a href="https://gionkunz.github.io/chartist-js/examples.html">examples</a> for more information.</p>
+<h3 id="example">Example</h3>
+<div><pre class="line-numbers"><code class="language-html"> &lt;x-chartist
+   [type]=&quot;type&quot;
+   [data]=&quot;data&quot;
+   [options]=&quot;options&quot;
+   [responsiveOptions]=&quot;responsiveOptions&quot;
+   [events]=&quot;events&quot;
+ &gt;&lt;/x-chartist&gt;</code></pre></div>
+    </p>
 
 
     <p class="comment">
@@ -136,38 +152,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#bindEvents">bindEvents</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnChanges">ngOnChanges</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnDestroy">ngOnDestroy</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#renderChart">renderChart</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#update">update</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -203,54 +187,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:67</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>elementRef</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -262,6 +198,8 @@
                         <code>data</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>The data object that needs to consist of a labels and a series array.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code>Chartist.IChartistData</code>
 
@@ -270,7 +208,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:71</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -283,6 +221,10 @@
                         <code>events</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Events object where keys are event names and values are event handler functions.</p>
+<p>Supported events are: draw, optionsChanged, data, animationBegin, animationEnd, created.</p>
+<p>Event handler function will receive a data argument which contains event data.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../interfaces/ChartEvent.html" target="_self" >ChartEvent</a></code>
 
@@ -291,7 +233,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:99</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -304,6 +246,8 @@
                         <code>options</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>The options object which overrides the default options.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../miscellaneous/typealiases.html#ChartOptions" target="_self" >Chartist.IChartOptions</a></code>
 
@@ -312,7 +256,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:83</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -325,6 +269,8 @@
                         <code>responsiveOptions</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>An array of responsive option arrays which are a media query and options object pair: [[mediaQueryString, optionsObject],[more...]]</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../miscellaneous/typealiases.html#ResponsiveOptions" target="_self" >ResponsiveOptions</a></code>
 
@@ -333,7 +279,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:89</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -346,6 +292,8 @@
                         <code>type</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Chartist chart type.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../miscellaneous/typealiases.html#ChartType" target="_self" >ChartType</a></code>
 
@@ -354,317 +302,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:56</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
-    <section>
-    
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="bindEvents"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            bindEvents
-                            </b>
-                            <a href="#bindEvents"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>bindEvents()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:122</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnChanges"></a>
-                        <span class="name">
-                            <b>
-                            ngOnChanges
-                            </b>
-                            <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:77</a></div>
                             </td>
                         </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>changes</td>
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnDestroy"></a>
-                        <span class="name">
-                            <b>
-                            ngOnDestroy
-                            </b>
-                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ngOnDestroy()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:81</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnInit"></a>
-                        <span class="name">
-                            <b>
-                            ngOnInit
-                            </b>
-                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ngOnInit()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:71</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="renderChart"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            renderChart
-                            </b>
-                            <a href="#renderChart"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>renderChart()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:88</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="update"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            update
-                            </b>
-                            <a href="#update"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>update(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:107</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>changes</td>
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
+
+
+
 
     <section>
     
@@ -699,10 +345,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:67</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:104</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Chartist chart instance</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -744,13 +396,28 @@ export type ResponsiveOptionTuple &#x3D; Chartist.IResponsiveOptionTuple&lt;
 export type ResponsiveOptions &#x3D; ResponsiveOptionTuple[];
 
 /**
- * Represent a chart event.
- * For possible values, check the Chartist docs.
+ * Represents chart events.
  */
 export interface ChartEvent {
   [eventName: string]: (data: any) &#x3D;&gt; void;
 }
 
+/**
+ * Angular component which renders Chartist chart.
+ *
+ * See Chartist {@link https://gionkunz.github.io/chartist-js/api-documentation.html API documentation} and
+ * {@link https://gionkunz.github.io/chartist-js/examples.html examples} for more information.
+ * ### Example
+ &#x60;&#x60;&#x60;html
+ &lt;x-chartist
+   [type]&#x3D;&quot;type&quot;
+   [data]&#x3D;&quot;data&quot;
+   [options]&#x3D;&quot;options&quot;
+   [responsiveOptions]&#x3D;&quot;responsiveOptions&quot;
+   [events]&#x3D;&quot;events&quot;
+ &gt;&lt;/x-chartist&gt;
+ &#x60;&#x60;&#x60;
+ */
 @Component({
   selector: &#x27;x-chartist&#x27;,
   template: &#x27;&#x27;,
@@ -763,35 +430,61 @@ export interface ChartEvent {
   ]
 })
 export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
+  /**
+   * The data object that needs to consist of a labels and a series array.
+   */
   @Input()
   data: Chartist.IChartistData;
 
+  /**
+   * Chartist chart type.
+   */
   @Input()
   type: ChartType;
 
+  /**
+   * The options object which overrides the default options.
+   */
   @Input()
   options: Chartist.IChartOptions;
 
+  /**
+   * An array of responsive option arrays which are a media query and options object pair: [[mediaQueryString, optionsObject],[more...]]
+   */
   @Input()
   responsiveOptions: ResponsiveOptions;
 
+  /**
+   * Events object where keys are event names and values are event handler functions.
+   *
+   * Supported events are: draw, optionsChanged, data, animationBegin, animationEnd, created.
+   *
+   * Event handler function will receive a data argument which contains event data.
+   */
   @Input()
   events: ChartEvent;
 
+  /**
+   * Chartist chart instance
+   */
   public chart: ChartInterfaces;
 
+  /** @ignore */
   constructor(private elementRef: ElementRef) {}
 
+  /** @ignore */
   ngOnInit(): void {
     if (this.type &amp;&amp; this.data) {
       this.renderChart();
     }
   }
 
+  /** @ignore */
   ngOnChanges(changes: SimpleChanges): void {
     this.update(changes);
   }
 
+  /** @ignore */
   ngOnDestroy(): void {
     if (this.chart) {
       this.chart.detach();
@@ -799,6 +492,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private renderChart() {
     const nativeElement &#x3D; this.elementRef.nativeElement;
 
@@ -818,6 +512,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private update(changes: SimpleChanges): void {
     if (!this.type || !this.data) {
       return;
@@ -833,6 +528,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  /** @ignore */
   private bindEvents(): void {
     for (const event of Object.keys(this.events)) {
       this.chart.on(event, this.events[event]);
