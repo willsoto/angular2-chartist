@@ -33,7 +33,7 @@
 <h1 id="angular-chartist">Angular Chartist</h1>
 <p><a href="http://badge.fury.io/js/ng-chartist"><img src="https://badge.fury.io/js/ng-chartist.svg" alt="npm version" class="img-responsive"></a>
 <a href="https://npmjs.org/package/ng-chartist"><img src="https://img.shields.io/npm/dt/ng-chartist.svg" alt="NPM downloads" class="img-responsive"></a>
-<a href="https://circleci.com/gh/willsoto/ng-chartist"><img src="https://circleci.com/gh/willsoto/ng-chartist.svg?style=shield" alt="CircleCI" class="img-responsive"></a></p>
+<a href="https://circleci.com/gh/willsoto/ng-chartist"><img src="https://circleci.com/gh/willsoto/ng-chartist.svg?style=shield" alt="CircleCI" class="img-responsive"></a> <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/willsoto/ng-chartist.svg" alt="Greenkeeper badge" class="img-responsive"></a></p>
 <h2 id="demo">Demo</h2>
 <p><a href="https://willsoto.github.io/ng-chartist/demo/index.html">https://willsoto.github.io/ng-chartist/demo/</a></p>
 <h2 id="docs">Docs</h2>
@@ -90,14 +90,7 @@ import { ChartEvent, ChartType } from &#39;ng-chartist&#39;;
       [options]=&quot;options&quot;
       [events]=&quot;events&quot;
     &gt;&lt;/x-chartist&gt;
-  `,
-  styles: [
-    `
-      x-chartist {
-        display: block;
-        height: 300px;
-      }
-    `
+  `
   ]
 })
 export class BarChartComponent {
@@ -126,7 +119,8 @@ export class BarChartComponent {
   options: IBarChartOptions = {
     axisX: {
       showGrid: false
-    }
+    },
+    height: 300
   };
 
   events: ChartEvent = {
@@ -145,7 +139,7 @@ export class BarChartComponent {
   };
 }</code></pre></div><p>You may also find it useful to view the <a href="https://github.com/willsoto/ng-chartist/blob/master/projects/ng-chartist-demo/src/app/app.component.ts">demo source</a>.</p>
 <h2 id="documentation">Documentation</h2>
-<p>All documentation is auto-generated from the source via typedoc and can be viewed <a href="https://willsoto.github.io/ng-chartist/docs/">here</a></p>
+<p>All documentation is auto-generated from the source via compodoc and can be viewed <a href="https://willsoto.github.io/ng-chartist/docs/">here</a></p>
 <h2 id="development">Development</h2>
 <h3 id="prepare-your-environment">Prepare your environment</h3>
 <ul>

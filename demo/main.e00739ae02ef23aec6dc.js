@@ -6169,7 +6169,7 @@
                 .slice(2)
                 .join('.'));
           };
-        })())('7.2.0'),
+        })())('7.2.2'),
         eo = (function(e) {
           function t(t) {
             var n = e.call(this) || this;
@@ -11756,7 +11756,7 @@
         Ol = n('BeBh'),
         Al = (function() {
           function e(e) {
-            this.elementRef = e;
+            (this.elementRef = e), (this.initialized = new Po());
           }
           return (
             (e.prototype.ngOnInit = function() {
@@ -11778,7 +11778,8 @@
                 this.options,
                 this.responsiveOptions
               )),
-                this.events && this.bindEvents();
+                this.events && this.bindEvents(),
+                this.initialized.emit(this.chart);
             }),
             (e.prototype.update = function(e) {
               this.type &&
@@ -14825,7 +14826,7 @@
                             lo() &&
                               s.sanitizedSomething &&
                               console.warn(
-                                'WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).'
+                                'WARNING: sanitizing HTML stripped some content, see http://g.co/ng/security#xss'
                               ),
                             a
                           );

@@ -2285,7 +2285,7 @@
                         ? ((f.value = h(f.value, l)),
                           (c = (i = f).configurable),
                           re((o = s.prototype), (a = e), (i = ne(o, a, i)), c))
-                        : (u[e] = h(u[e], l));
+                        : u[e] && (u[e] = h(u[e], l));
                     } else u[e] && (u[e] = h(u[e], l));
                   }),
                 i.call(e, a, s, c)

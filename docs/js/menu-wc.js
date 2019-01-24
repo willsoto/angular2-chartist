@@ -95,12 +95,12 @@ customElements.define(
               (isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"') +
               '>\n                \n                    <li class="link">\n                        <a href="modules/ChartistModule.html" data-type="entity-link">ChartistModule</a>\n                        \n                            <li class="chapter inner">\n                                <div class="simple menu-toggler" data-toggle="collapse"\n                                    ' +
               (isNormalMode
-                ? 'data-target="#components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
-                : 'data-target="#xs-components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"') +
+                ? 'data-target="#components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
+                : 'data-target="#xs-components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"') +
               '>\n                                    <span class="icon ion-md-cog"></span>\n                                    <span>Components</span>\n                                    <span class="icon ion-ios-arrow-down"></span>\n                                </div>\n                                <ul class="links collapse"\n                                    ' +
               (isNormalMode
-                ? 'id="components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
-                : 'id="xs-components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"') +
+                ? 'id="components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
+                : 'id="xs-components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"') +
               '>\n                                    \n                                        <li class="link">\n                                            <a href="components/ChartistComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChartistComponent</a>\n                                        </li>\n                                    \n                                </ul>\n                            </li>\n                        \n                        \n                        \n                        \n                        \n                    </li>\n                \n            </ul>\n        </li>\n        \n        \n            \n        \n        \n        \n        \n        \n        \n        \n        \n        <li class="chapter">\n            <div class="simple menu-toggler" data-toggle="collapse"\n                ' +
               (isNormalMode
                 ? 'data-target="#interfaces-links"'

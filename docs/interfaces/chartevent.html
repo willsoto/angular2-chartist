@@ -87,7 +87,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/ng-chartist/src/lib/chartist.component.ts:37</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -101,10 +101,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
+  Output,
   SimpleChanges
 } from &#x27;@angular/core&#x27;;
 
@@ -189,7 +191,7 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
   responsiveOptions: ResponsiveOptions;
 
   /**
-   * Events object where keys are event names and values are event handler functions.
+   * Events object where keys are Chartist event names and values are event handler functions.
    *
    * Supported events are: draw, optionsChanged, data, animationBegin, animationEnd, created.
    *
@@ -199,9 +201,15 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
   events: ChartEvent;
 
   /**
-   * Chartist chart instance
+   * Event emitted after Chartist chart has been initialized.
+   *
+   * Event handler function will receive chart instance argument.
    */
-  public chart: ChartInterfaces;
+  @Output()
+  initialized &#x3D; new EventEmitter&lt;ChartInterfaces&gt;();
+
+  /** @ignore */
+  private chart: ChartInterfaces;
 
   /** @ignore */
   constructor(private elementRef: ElementRef) {}
@@ -244,6 +252,8 @@ export class ChartistComponent implements OnInit, OnChanges, OnDestroy {
     if (this.events) {
       this.bindEvents();
     }
+
+    this.initialized.emit(this.chart);
   }
 
   /** @ignore */
