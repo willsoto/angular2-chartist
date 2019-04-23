@@ -230,11 +230,28 @@ document.addEventListener('DOMContentLoaded', function() {
             if (toggler) {
               toggler.click();
             }
+            if (linkContextId === 'additional') {
+              var mainToggler = activeMenu.querySelector(
+                '.chapter.' + linkContextId + ' div.menu-toggler'
+              );
+              if (mainToggler) {
+                mainToggler.click();
+              }
+            }
           }
         } else if (linkType === 'chapter-link') {
+          var linkContextId = activeLink.getAttribute('data-context-id');
           var toggler = activeLink.querySelector('.menu-toggler');
           if (toggler) {
             toggler.click();
+          }
+          if (linkContextId === 'additional') {
+            var mainToggler = activeMenu.querySelector(
+              '.chapter.' + linkContextId + ' div.menu-toggler'
+            );
+            if (mainToggler) {
+              mainToggler.click();
+            }
           }
         }
         setTimeout(function() {
