@@ -41,128 +41,130 @@
         }
         return !1;
       },
-      i = (document,
-      function(i, a) {
-        (a = a || {}),
-          (this.btn = 'object' == typeof i ? i : document.querySelector(i)),
-          (this.accordion = null),
-          (this.collapse = null),
-          (this.duration = 300),
-          (this.options = {}),
-          (this.options.duration =
-            o && o < 10 ? 0 : a.duration || this.duration);
-        var r = this,
-          s = function(t) {
-            var e = t && (t.currentStyle || window.getComputedStyle(t)),
-              o = /px/.test(e.borderTopWidth)
-                ? Math.round(e.borderTopWidth.replace('px', ''))
-                : 0,
-              n = /px/.test(e.marginTop)
-                ? Math.round(e.marginTop.replace('px', ''))
-                : 0,
-              i = /px/.test(e.marginBottom)
-                ? Math.round(e.marginBottom.replace('px', ''))
-                : 0,
-              a = /em/.test(e.marginTop)
-                ? Math.round(
-                    e.marginTop.replace('em', '') * parseInt(e.fontSize)
-                  )
-                : 0,
-              r = /em/.test(e.marginBottom)
-                ? Math.round(
-                    e.marginBottom.replace('em', '') * parseInt(e.fontSize)
-                  )
-                : 0;
-            return (
-              t.clientHeight +
-              parseInt(o) +
-              parseInt(n) +
-              parseInt(i) +
-              parseInt(a) +
-              parseInt(r)
-            );
-          };
-        (this.toggle = function(t) {
-          t.preventDefault(),
-            /\bin/.test(r.collapse.className) ? r.close() : r.open();
-        }),
-          (this.close = function() {
-            this._close(this.collapse), t(this.btn, 'collapsed');
+      i =
+        (document,
+        function(i, a) {
+          (a = a || {}),
+            (this.btn = 'object' == typeof i ? i : document.querySelector(i)),
+            (this.accordion = null),
+            (this.collapse = null),
+            (this.duration = 300),
+            (this.options = {}),
+            (this.options.duration =
+              o && o < 10 ? 0 : a.duration || this.duration);
+          var r = this,
+            s = function(t) {
+              var e = t && (t.currentStyle || window.getComputedStyle(t)),
+                o = /px/.test(e.borderTopWidth)
+                  ? Math.round(e.borderTopWidth.replace('px', ''))
+                  : 0,
+                n = /px/.test(e.marginTop)
+                  ? Math.round(e.marginTop.replace('px', ''))
+                  : 0,
+                i = /px/.test(e.marginBottom)
+                  ? Math.round(e.marginBottom.replace('px', ''))
+                  : 0,
+                a = /em/.test(e.marginTop)
+                  ? Math.round(
+                      e.marginTop.replace('em', '') * parseInt(e.fontSize)
+                    )
+                  : 0,
+                r = /em/.test(e.marginBottom)
+                  ? Math.round(
+                      e.marginBottom.replace('em', '') * parseInt(e.fontSize)
+                    )
+                  : 0;
+              return (
+                t.clientHeight +
+                parseInt(o) +
+                parseInt(n) +
+                parseInt(i) +
+                parseInt(a) +
+                parseInt(r)
+              );
+            };
+          (this.toggle = function(t) {
+            t.preventDefault(),
+              /\bin/.test(r.collapse.className) ? r.close() : r.open();
           }),
-          (this.open = function() {
-            if (
-              (this._open(this.collapse),
-              e(this.btn, 'collapsed'),
-              null !== this.accordion)
-            ) {
-              var t = this.accordion.querySelectorAll('.collapse.in'),
-                o = t.length,
-                n = 0;
-              for (n; n < o; n++) t[n] !== this.collapse && this._close(t[n]);
-            }
-          }),
-          (this._open = function(o) {
-            this.removeEvent(),
-              t(o, 'in'),
-              o.setAttribute('aria-expanded', 'true'),
-              t(o, 'collapsing'),
-              setTimeout(function() {
-                (o.style.height = r.getMaxHeight(o) + 'px'),
-                  (o.style.overflowY = 'hidden');
-              }, 0),
-              setTimeout(function() {
-                (o.style.height = ''),
-                  (o.style.overflowY = ''),
-                  e(o, 'collapsing'),
-                  r.addEvent();
-              }, this.options.duration);
-          }),
-          (this._close = function(o) {
-            this.removeEvent(),
-              o.setAttribute('aria-expanded', 'false'),
-              (o.style.height = this.getMaxHeight(o) + 'px'),
-              setTimeout(function() {
-                (o.style.height = '0px'),
-                  (o.style.overflowY = 'hidden'),
-                  t(o, 'collapsing');
-              }, 0),
-              setTimeout(function() {
-                e(o, 'collapsing'),
-                  e(o, 'in'),
-                  (o.style.overflowY = ''),
+            (this.close = function() {
+              this._close(this.collapse), t(this.btn, 'collapsed');
+            }),
+            (this.open = function() {
+              if (
+                (this._open(this.collapse),
+                e(this.btn, 'collapsed'),
+                null !== this.accordion)
+              ) {
+                var t = this.accordion.querySelectorAll('.collapse.in'),
+                  o = t.length,
+                  n = 0;
+                for (n; n < o; n++) t[n] !== this.collapse && this._close(t[n]);
+              }
+            }),
+            (this._open = function(o) {
+              this.removeEvent(),
+                t(o, 'in'),
+                o.setAttribute('aria-expanded', 'true'),
+                t(o, 'collapsing'),
+                setTimeout(function() {
+                  (o.style.height = r.getMaxHeight(o) + 'px'),
+                    (o.style.overflowY = 'hidden');
+                }, 0),
+                setTimeout(function() {
                   (o.style.height = ''),
-                  r.addEvent();
-              }, this.options.duration);
-          }),
-          (this.getMaxHeight = function(t) {
-            for (var e = 0, o = 0, n = t.children.length; o < n; o++)
-              e += s(t.children[o]);
-            return e;
-          }),
-          (this.removeEvent = function() {
-            this.btn.removeEventListener('click', this.toggle, !1);
-          }),
-          (this.addEvent = function() {
-            this.btn.addEventListener('click', this.toggle, !1);
-          }),
-          (this.getTarget = function() {
-            var t = this.btn,
-              e = t.href && t.getAttribute('href').replace('#', ''),
-              o =
-                t.getAttribute('data-target') && t.getAttribute('data-target'),
-              n = e || (o && /#/.test(o) && o.replace('#', '')),
-              i = o && '.' === o.charAt(0) && o;
-            return (
-              (n && document.getElementById(n)) ||
-              (i && document.querySelector(i))
-            );
-          }),
-          this.addEvent(),
-          (this.collapse = this.getTarget()),
-          (this.accordion =
-            this.btn.getAttribute('data-parent') &&
-            n(this.btn, this.btn.getAttribute('data-parent')));
-      }),
+                    (o.style.overflowY = ''),
+                    e(o, 'collapsing'),
+                    r.addEvent();
+                }, this.options.duration);
+            }),
+            (this._close = function(o) {
+              this.removeEvent(),
+                o.setAttribute('aria-expanded', 'false'),
+                (o.style.height = this.getMaxHeight(o) + 'px'),
+                setTimeout(function() {
+                  (o.style.height = '0px'),
+                    (o.style.overflowY = 'hidden'),
+                    t(o, 'collapsing');
+                }, 0),
+                setTimeout(function() {
+                  e(o, 'collapsing'),
+                    e(o, 'in'),
+                    (o.style.overflowY = ''),
+                    (o.style.height = ''),
+                    r.addEvent();
+                }, this.options.duration);
+            }),
+            (this.getMaxHeight = function(t) {
+              for (var e = 0, o = 0, n = t.children.length; o < n; o++)
+                e += s(t.children[o]);
+              return e;
+            }),
+            (this.removeEvent = function() {
+              this.btn.removeEventListener('click', this.toggle, !1);
+            }),
+            (this.addEvent = function() {
+              this.btn.addEventListener('click', this.toggle, !1);
+            }),
+            (this.getTarget = function() {
+              var t = this.btn,
+                e = t.href && t.getAttribute('href').replace('#', ''),
+                o =
+                  t.getAttribute('data-target') &&
+                  t.getAttribute('data-target'),
+                n = e || (o && /#/.test(o) && o.replace('#', '')),
+                i = o && '.' === o.charAt(0) && o;
+              return (
+                (n && document.getElementById(n)) ||
+                (i && document.querySelector(i))
+              );
+            }),
+            this.addEvent(),
+            (this.collapse = this.getTarget()),
+            (this.accordion =
+              this.btn.getAttribute('data-parent') &&
+              n(this.btn, this.btn.getAttribute('data-parent')));
+        }),
       a = document.querySelectorAll('[data-toggle="collapse"]'),
       r = 0,
       s = a.length;

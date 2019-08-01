@@ -1074,25 +1074,26 @@
             a = e('babel-runtime/helpers/createClass'),
             u = n(a),
             c = e('./tag'),
-            s = (e('./generators'),
-            (function() {
-              function e(t) {
-                (0, i.default)(this, e),
-                  (this.skipIteration = t.skipIteration),
-                  (this.tagMap = (0, c.getTagMap)(t));
-              }
-              return (
-                (0, u.default)(e, [
-                  {
-                    key: 'getGenerator',
-                    value: function(e) {
-                      return this.tagMap[e];
+            s =
+              (e('./generators'),
+              (function() {
+                function e(t) {
+                  (0, i.default)(this, e),
+                    (this.skipIteration = t.skipIteration),
+                    (this.tagMap = (0, c.getTagMap)(t));
+                }
+                return (
+                  (0, u.default)(e, [
+                    {
+                      key: 'getGenerator',
+                      value: function(e) {
+                        return this.tagMap[e];
+                      }
                     }
-                  }
-                ]),
-                e
-              );
-            })());
+                  ]),
+                  e
+                );
+              })());
           r.default = s;
         },
         {

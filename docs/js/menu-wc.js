@@ -49,11 +49,11 @@ customElements.define(
                                 <span class="icon ion-ios-paper"></span>LICENSE
                             </a>
                         </li>
-                        <li class="link">
-                            <a href="dependencies.html" data-type="chapter-link">
-                                <span class="icon ion-ios-list"></span>Dependencies
-                            </a>
-                        </li>
+                                <li class="link">
+                                    <a href="dependencies.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-list"></span>Dependencies
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter modules">
@@ -68,7 +68,7 @@ customElements.define(
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                         </a>
-                        <ul class="links collapse" ${
+                        <ul class="links collapse " ${
                           isNormalMode
                             ? 'id="modules-links"'
                             : 'id="xs-modules-links"'
@@ -78,8 +78,8 @@ customElements.define(
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${
                                           isNormalMode
-                                            ? 'data-target="#components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
-                                            : 'data-target="#xs-components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
+                                            ? 'data-target="#components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
+                                            : 'data-target="#xs-components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
                                         }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
@@ -87,8 +87,8 @@ customElements.define(
                                         </div>
                                         <ul class="links collapse" ${
                                           isNormalMode
-                                            ? 'id="components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
-                                            : 'id="xs-components-links-module-ChartistModule-f11f267ab2309a22fa63feced287aebb"'
+                                            ? 'id="components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
+                                            : 'id="xs-components-links-module-ChartistModule-1d6d8b5ed742b9b8ba806f5ae35265d0"'
                                         }>
                                             <li class="link">
                                                 <a href="components/ChartistComponent.html"
@@ -109,7 +109,7 @@ customElements.define(
                             <span>Interfaces</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${
+                        <ul class="links collapse " ${
                           isNormalMode
                             ? ' id="interfaces-links"'
                             : 'id="xs-interfaces-links"'
@@ -129,7 +129,7 @@ customElements.define(
                             <span>Miscellaneous</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${
+                        <ul class="links collapse " ${
                           isNormalMode
                             ? 'id="miscellaneous-links"'
                             : 'id="xs-miscellaneous-links"'
